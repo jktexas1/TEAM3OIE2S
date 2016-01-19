@@ -1,0 +1,63 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+            
+                <h1 style="margin:0; padding:0; color: Black"><%: Html.ActionLink("TEAM3OIE2S", "Index", "Home")%></h1>
+                <p style="margin:0; padding:0;">The largest anonymized EVAR system on the web</p>
+            </div>
+              
+            <div id="logindisplay">
+                <% Html.RenderPartial("LogOnUserControl"); %>
+            </div> 
+            
+            <div id="menucontainer" align="left">
+            
+                <ul id="menu">             
+                    <li><%: Html.ActionLink("Home", "Index", "Home")%></li>
+                      <% if (Session["surgeonID"] == null)
+                         { %>
+                    <li><%: Html.ActionLink("About Us", "About", "Home")%></li>
+                    <li><%: Html.ActionLink("Contact Us", "Contact", "Home")%></li>
+                    <%} %>
+                    <li><%: Html.ActionLink("Testimonial", "Testimonial", "Home")%></li>
+                    
+                    <% if (Session["surgeonID"] != null)
+                       { %>
+                    <li><%: Html.ActionLink("Upload", "Upload", "Home")%></li>
+                    <li><%: Html.ActionLink("Visualize", "Visualize", "Home")%></li>
+                    <li><%: Html.ActionLink("Analysis", "Analysis", "Home")%></li>
+                    <li><%: Html.ActionLink("Add New Patient", "NewPatient", "Home")%></li>
+                    <% } %>
+                    <% if (Convert.ToInt32(Session["typeID"]) == 1)
+                       { %>
+                    <li><%: Html.ActionLink("Audit","Audit", "Home")%></li>
+                    <% } %>
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+            <div id="footer">
+                <%: Html.ActionLink("Home", "Index", "Home")%> | <%: Html.ActionLink("About Us", "About", "Home")%> | <%: Html.ActionLink("Contact Us", "Contact", "Home")%><br />
+                Copyright © 2015 
+                <br />
+                University of Houston</div>
+        </div>
+    </div>
+<script type='text/javascript'>    (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: '7695123a-047c-49f0-b7d2-2200436ecc94', f: true }); done = true; } }; })();</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TestimonialDBModelsStoreContainer" CdmEntityContainer="TestimonialEntities">
+    <EntitySetMapping Name="TestimonialViews">
+      <EntityTypeMapping TypeName="TestimonialDBModels.TestimonialView">
+        <MappingFragment StoreEntitySet="TestimonialView">
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="testimonialID" ColumnName="testimonialID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

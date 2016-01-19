@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TEAM3OIE2SDBModels.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="TEAM3OIE2SDBModelsStoreContainer">
+          <EntitySet Name="Patient" EntityType="TEAM3OIE2SDBModels.Store.Patient" store:Type="Tables" Schema="TEAM3OIE2S" />
+        </EntityContainer>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="patientID" />
+          </Key>
+          <Property Name="patientID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="originalID" Type="int" />
+          <Property Name="sex" Type="varchar" MaxLength="1" />
+          <Property Name="age" Type="int" />
+          <Property Name="entryDate" Type="datetime" />
+          <Property Name="dateOfSurgery" Type="datetime" />
+          <Property Name="surgeonID" Type="int" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TEAM3OIE2SDBModels" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="PatientEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Patients" EntityType="TEAM3OIE2SDBModels.Patient" />
+        </EntityContainer>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="patientID" />
+          </Key>
+          <Property Name="patientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="originalID" Type="Int32" />
+          <Property Name="sex" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="age" Type="Int32" />
+          <Property Name="entryDate" Type="DateTime" />
+          <Property Name="dateOfSurgery" Type="DateTime" />
+          <Property Name="surgeonID" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TEAM3OIE2SDBModelsStoreContainer" CdmEntityContainer="PatientEntities">
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="TEAM3OIE2SDBModels.Patient">
+              <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="patientID" ColumnName="patientID" />
+                <ScalarProperty Name="originalID" ColumnName="originalID" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="entryDate" ColumnName="entryDate" />
+                <ScalarProperty Name="dateOfSurgery" ColumnName="dateOfSurgery" />
+                <ScalarProperty Name="surgeonID" ColumnName="surgeonID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="PatientModel">
+        <EntityTypeShape EntityType="TEAM3OIE2SDBModels.Patient" Width="1.5" PointX="0.75" PointY="0.75" Height="2.3648893229166665" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

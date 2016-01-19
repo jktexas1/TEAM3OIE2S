@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestimonialDBModels" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="TestimonialEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TestimonialViews" EntityType="TestimonialDBModels.TestimonialView" />
+  </EntityContainer>
+  <EntityType Name="TestimonialView">
+    <Key>
+      <PropertyRef Name="testimonialID" />
+    </Key>
+    <Property Name="firstname" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="content" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="date" Type="DateTime" />
+    <Property Name="testimonialID" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

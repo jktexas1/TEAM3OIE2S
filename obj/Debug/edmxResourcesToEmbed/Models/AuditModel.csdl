@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TEAM3OIE2SDBModels" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="AuditEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Audits" EntityType="TEAM3OIE2SDBModels.Audit" />
+  </EntityContainer>
+  <EntityType Name="Audit">
+    <Key>
+      <PropertyRef Name="auditID" />
+    </Key>
+    <Property Name="auditID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userID" Type="Int32" />
+    <Property Name="userName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="date" Type="DateTime" />
+    <Property Name="DBtable" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="attribute" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="access" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+</Schema>

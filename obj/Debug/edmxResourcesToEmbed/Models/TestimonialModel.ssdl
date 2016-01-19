@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestimonialDBModels.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="TestimonialDBModelsStoreContainer">
+    <EntitySet Name="TestimonialView" EntityType="TestimonialDBModels.Store.TestimonialView" store:Type="Views" store:Schema="TEAM3OIE2S" store:Name="TestimonialView">
+      <DefiningQuery>SELECT 
+      [TestimonialView].[firstname] AS [firstname], 
+      [TestimonialView].[content] AS [content], 
+      [TestimonialView].[date] AS [date], 
+      [TestimonialView].[testimonialID] AS [testimonialID]
+      FROM [TEAM3OIE2S].[TestimonialView] AS [TestimonialView]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'TEAM3OIE2S.TEAM3OIE2S.TestimonialView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="TestimonialView">
+    <Key>
+      <PropertyRef Name="testimonialID" />
+    </Key>
+    <Property Name="firstname" Type="varchar" MaxLength="100" />
+    <Property Name="content" Type="varchar" MaxLength="250" />
+    <Property Name="date" Type="datetime" />
+    <Property Name="testimonialID" Type="int" Nullable="false" />
+  </EntityType>
+</Schema>

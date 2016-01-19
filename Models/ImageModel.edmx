@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TEAM3OIE2SDBModels.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="TEAM3OIE2SDBModelsStoreContainer">
+          <EntitySet Name="Image" EntityType="TEAM3OIE2SDBModels.Store.Image" store:Type="Tables" Schema="TEAM3OIE2S" />
+        </EntityContainer>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="imageID" />
+          </Key>
+          <Property Name="imageID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="imageOrder" Type="int" />
+          <Property Name="imageFilename" Type="varchar" MaxLength="100" />
+          <Property Name="imageTitle" Type="varchar" MaxLength="100" />
+          <Property Name="sliceThickness" Type="int" />
+          <Property Name="pixelSize" Type="int" />
+          <Property Name="seriesID" Type="int" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TEAM3OIE2SDBModels" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ImageDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Images" EntityType="TEAM3OIE2SDBModels.Image" />
+        </EntityContainer>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="imageID" />
+          </Key>
+          <Property Name="imageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imageOrder" Type="Int32" />
+          <Property Name="imageFilename" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="imageTitle" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="sliceThickness" Type="Int32" />
+          <Property Name="pixelSize" Type="Int32" />
+          <Property Name="seriesID" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TEAM3OIE2SDBModelsStoreContainer" CdmEntityContainer="ImageDBEntities">
+          <EntitySetMapping Name="Images">
+            <EntityTypeMapping TypeName="TEAM3OIE2SDBModels.Image">
+              <MappingFragment StoreEntitySet="Image">
+                <ScalarProperty Name="imageID" ColumnName="imageID" />
+                <ScalarProperty Name="imageOrder" ColumnName="imageOrder" />
+                <ScalarProperty Name="imageFilename" ColumnName="imageFilename" />
+                <ScalarProperty Name="imageTitle" ColumnName="imageTitle" />
+                <ScalarProperty Name="sliceThickness" ColumnName="sliceThickness" />
+                <ScalarProperty Name="pixelSize" ColumnName="pixelSize" />
+                <ScalarProperty Name="seriesID" ColumnName="seriesID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ImageModel">
+        <EntityTypeShape EntityType="TEAM3OIE2SDBModels.Image" Width="1.5" PointX="0.75" PointY="0.75" Height="2.3648893229166665" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

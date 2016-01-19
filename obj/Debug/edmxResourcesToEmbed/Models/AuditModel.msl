@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TEAM3OIE2SDBModelsStoreContainer" CdmEntityContainer="AuditEntities">
+    <EntitySetMapping Name="Audits">
+      <EntityTypeMapping TypeName="TEAM3OIE2SDBModels.Audit">
+        <MappingFragment StoreEntitySet="Audit">
+          <ScalarProperty Name="auditID" ColumnName="auditID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="DBtable" ColumnName="DBtable" />
+          <ScalarProperty Name="attribute" ColumnName="attribute" />
+          <ScalarProperty Name="access" ColumnName="access" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
